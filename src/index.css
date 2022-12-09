@@ -1,0 +1,388 @@
+body {
+  background: linear-gradient(240deg, rgba(150, 50, 50, 0.3), rgba(0, 0, 200, 0));
+  color: var(--text);
+  font-family: Luciole,"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+@font-face {
+	font-family: 'Achemine';
+	src: url('assets/fonts/Achemine.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Transilien';
+	src: url('assets/fonts/TransilienSmall.ttf') format('truetype');
+}
+
+h1{
+  margin: 10px 20px;
+}
+.Body{
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+.App{
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border: 0;
+  width: 300px;
+  height: 364px;
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  background-color: #333;
+  text-align: left;
+  padding: 20px;
+}
+.Trafic{
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border: 0;
+  width: 830px;
+  height: 385px;
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  background-color: #3333332e;
+  text-align: left;
+  padding: 20px;
+}
+.Webcam {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  
+  z-index: 10;
+
+  animation: 0.8s ease 0s 1 normal none running SettingsOptions;
+}
+/* --- */ 
+
+.container {
+  display: inline-block;
+}
+
+h2{
+  margin: 15px 20px;
+}
+
+.slug1{
+  border: 4px solid #eb2132;
+}
+.slug2{
+  border: 4px solid #f58f53;
+}
+.slug3{
+  border: 4px solid #008b5b;
+}
+.slug0{
+  border: 4px solid #ffffff00;
+}
+
+.trafic_block{
+  background-color: #00000014;
+  border-radius: 10px;
+  
+  margin-left: 15px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+}
+.trafic_block .img{
+  max-width: 35px;
+  padding: 5px;
+}
+.trafic_block .trafic_img{
+  position: relative;
+  top: -15px;
+  left: 30px;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+}
+
+.Trafic_det{
+  position: relative;
+  top: 75px;
+  color: #ddd;
+}
+.Trafic_det .trafic_block{
+  display: block;
+}
+.Trafic_det b{
+  position: relative;
+  top: -45px;
+  margin-left: 85px;
+  font-size: 17px;
+
+  display: block;
+}
+.Trafic_det .line{
+  position: relative;
+  top: -40px;
+  margin: 0 10px;
+  
+  display: block;
+}
+.line {
+  white-space: pre-line;
+}
+
+/* --- */
+.time{
+  font-family: 'Transilien';
+  z-index: 50;
+  
+  position: relative;
+  left: -10px;
+  top: 0px;
+
+  background-color: #141414;
+  border-radius: 15px;
+
+  padding: 15px 10px 10px 20px;
+
+  color: #fcc900;
+  font-size: 45px;
+
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24);
+}
+
+.date{
+  position: relative;
+  top: -5px;
+  font-weight: bold;
+  font-size: 17px;
+  color: #737373;
+  z-index: 5;
+}
+
+.App .weather{
+  color: #fff;
+  position: relative;
+  margin: auto;
+}
+.Trafic .weather{
+  color: #000;
+}
+
+.weather .type{
+  width: 120px;
+}
+.weather .temp{
+  font-weight: bold;
+  font-size: 17px;
+
+  background-color: #1c4877;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.weather .temp_min{
+  background-color: #38cfff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.weather .temp_max{
+  background-color: #C62626;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.weather .temp_space{
+  width: 20px;
+  display: inline-block;
+}
+
+.weather .det_img{
+  width: 25px;
+  position: relative;
+  top: 5px;
+  margin: 0 10px;
+}
+.weather .alert{
+  background-color: #1c4877;
+  margin-top: 10px;
+  padding-top: 5px;
+}
+.weather .alert img{
+  width: 40px;
+}
+.weather .alert h2{
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
+
+.weather_block{
+  text-align: center;
+}
+
+.weather_block img{
+  width: 35px;
+}
+.fake_img{
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+.fake_img span{
+  background-color: #776e6e;
+  height: 2px;
+  width: 60px;
+  left: -10px;
+  position: relative;
+  display: inline-block;
+
+}
+.weather td{
+  width: 55px;
+  max-width: 55px;
+  min-width: 55px;
+}
+
+
+/* --- */
+#webcam {
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border: 0;
+  width: 1270px;
+  height: 400px;
+  padding: 0;
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+
+  background-image: url(https://srv01.trinum.com/ibox/ftpcam/mega_les-arcs_arcabulle.jpg);
+  background-size: cover;
+  background-position: center center;
+  
+  text-align: left;
+}
+
+#webcam2{
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border: 0;
+  width: 750px;
+  height: 420px;
+  padding: 0;
+  margin: 20px;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  background-image: url(http://www.trinum.com/ibox/ftpcam/mega_les_arcs_tsd-mont-blanc.jpg);
+  background-size: cover;
+  text-align: left;
+}
+
+/* --- */
+
+.Night{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #ddd;
+
+  z-index: 10;
+}
+
+.Night .night_img{
+  display: block;
+  width: 100px;
+  margin: 5% 5% auto auto;
+}
+
+.Night div{
+  position: absolute;
+  background-color: #141414;
+  padding: 10px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24);
+}
+
+.Night .night_eco{
+  width: 50px;
+}
+
+.Night h2{
+  display: inline-block;
+  position: relative;
+  top: -15px;
+}
+.Night span{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  top: -7px;
+}
+
+@keyframes SettingsOptions {
+	0% {
+		margin-left:50px;
+		margin-right:-50px;
+		opacity:0;
+	}
+	100% {
+		margin-left:0;
+		opacity:1;
+	}
+}
+
+
+.menu{
+  position: relative;
+  top: 150px;
+  color: #fff;
+}
+.menu_button{
+  margin: 0 10px 0px 15px;
+  padding: 10px 0;
+  border-bottom: 2px #7f7f7f solid;
+  font-size: 20px;
+}
+.menu_button_det{
+  margin: 0 5px 0px 15px;
+  padding: 5px 0;
+  border-bottom: 2px #7f7f7f solid;
+  font-size: 10px;
+}
+.toggle{
+  position: relative;
+  top: 55px;
+  margin-left: 10px;
+}
+.toggle_name{
+  margin-left: 55px; 
+}
+
+.timer{
+  top: 150px;
+  width: 7px;
+  background-color: #7f7f7f;
+  display: inline-block;
+  position: absolute;
+}
+
+
+.canvasjs-chart-credit, .canvasjs-chart-tooltip{
+  display: none;
+}
+
+.Temp_canva{
+  position: relative;
+  top: 50px;
+  left: 25vw;
+}
